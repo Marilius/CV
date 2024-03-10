@@ -1,0 +1,203 @@
+% neomake: skip
+\documentclass{article}
+
+\usepackage{cmap}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{makecell}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{fontawesome}
+\usepackage{verbatim}
+
+\usepackage{geometry}
+\geometry{top=10mm}
+\geometry{bottom=10mm}
+\geometry{left=15mm}
+\geometry{right=15mm}
+
+\pagenumbering{gobble}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks  = true,
+            linkcolor   = blue,
+            urlcolor    = blue,
+            citecolor   = black,
+            anchorcolor = black]{hyperref}
+            
+\newif\ifen
+\newif\ifru
+
+\newcommand{\en}[1]{\ifen#1\fi}
+\newcommand{\ru}[1]{\ifru#1\fi}
+
+\rutrue
+% \entrue
+
+\renewcommand{\maketitle}{
+    \Huge
+    \begin{center}
+        \textbf{
+        \ru{Басалов Ярослав}
+        \en{Basalov Iaroslav}
+        }
+    \end{center}
+
+    \small
+    \begin{center}
+    \faMobile \hspace{0.1cm} $\boldsymbol{+}$7(961)260-08-01 
+    \hfill
+    \faEnvelope \hspace{0.1cm} \href{mailto:BasalovYA@my.msu.ru}{BasalovYA@my.msu.ru}
+    \hfill
+    \faPaperPlane \hspace{0.1cm} \href{https://t.me/yabasalov}{@yabasalov}
+    \hfill
+    \faGithub \hspace{0.1cm} \href{https://github.com/Marilius}{Marilius}
+    \end{center}
+}
+
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bf\raggedright}{}{0.5em}{}[{\titlerule[1pt]}]
+\titlespacing{\section}{0pt}{3pt}{7pt}
+\titleformat{\subsection}{\large\bfseries\raggedright}{}{0em}{\underline}%[\rule{3cm}{.2pt}]
+\titlespacing{\subsection}{0pt}{7pt}{7pt}
+
+
+\newcommand{\entry}[3]{
+	\begin{tabular}{ c | c }
+    \begin{minipage}{0.05\linewidth}
+    	\begin{center}
+    		#1
+    	\end{center}
+    \end{minipage} 
+    &
+    \begin{minipage}{0.85\linewidth}
+        \textbf{#2} \\ \footnotesize{#3}
+    \end{minipage}
+    \end{tabular}
+}
+
+\newcommand{\interval}[2]{
+	#1 - #2
+}
+
+
+\setlist[itemize]{noitemsep, topsep=0pt}
+
+\begin{document}
+    \maketitle
+    \small
+
+    \section{\ru{Работа}\en{Work}}
+        \entry {\interval{2023}{2023}}
+        {\ru{Яндекс}\en{Yandex} - \ru{Команда Search as a Service}\en{Search as a Service} - Backend \ru{Разработчик}\en{Engineer}}
+        {\ru{Бэкенд разработка на Python}\en{Backend Python development}: 
+        	\begin{itemize}
+        		\item \ru{Автоматизации и отладка инфраструктурных компонент SaaS}\en{Automation and debugging of SaaS infrastructure components};
+                \item \ru{Разработка интерфейса взаимодействия с этими инструментами автоматизации на Flask и aiohttp}\en{Development of an interface for interaction with these automation tools using Flask and aiohttp};
+        		\item \ru{Разработка скриптов и вспомогательных микросервисов на Python3}\en{Development of scripts and auxiliary microservices in Python3};
+        		\item \ru{Интеграция компонент на C\texttt{++} и Python3 с использованием Cython }\en{Integrating C\texttt{++} and Python3 components using Cython};
+                \item \ru{Портирование Legacy кода с Python2 на Python3}\en{Porting Legacy code from Python2 to Python3}.
+        	\end{itemize}
+        }
+
+        \vspace{.5em}
+    
+        \entry {\interval{2022}{2022}}
+        {\ru{Факультет Вычислительной Математики и Кибернетики Московского государственного университета имени М.В.Ломоносова}\en{CMC MSU} - 
+        \ru{Разработчик}\en{Engineer}}
+        {\ru{Разработка на Python}\en{Python development}: 
+        	\begin{itemize}
+        		\item \ru{Разработка автоматизированной изолированной системы проверки домашних заданий}\en{Development of an automated isolated system for homework checking};
+                \item \ru{Разработка структуры системы}\en{Development of the system structure};
+        		\item \ru{Имплиментация системы публикации результатов проверки на Python3 (Jinja2)}\en{Implementation of publishing system for test results in Python3 (Jinja2)}.
+        	\end{itemize}
+        }
+
+        \vspace{.5em}
+    
+        \entry {\interval{2023}{2024}}
+        {\ru{Репетитор по математике}\en{Math tutor}}
+        {\ru{Репетитор по математике 7--9 класс}\en{Math tutor for grades 7--9}}.
+        % {\ru{Разработка на Python}\en{Python development}: 
+        % 	\begin{itemize}
+        % 		\item \ru{Разработка и поддержка инфраструктуры для торговли криптовалютами} \en{Development and maintenance of infrastructure for crypto trading}.
+        % 		\item \ru{Создание}\en{Setting up} CI pipeline \ru{для}\en{for} CMake projects: building, testing, caching, automatic dependecies updating.
+        % 		\item \ru{Имплементация протокола коммуникации между компонентами с использованием} \en{Implementing microservices communication protocol with} Aeron.
+        % 		\item \ru{Разработка скриптов и вспомогательных микросервисов на} \en{Developing scripts and small microservices with} python3.
+        % 	\end{itemize}
+        % }
+
+    % \section{\ru{Курсы}\en{Courses}}
+    %     \entry {2021}
+    %         {\ru{МФТИ}\en{MIPT} - \ru{Теория и практика многопоточной синхронизации}\en{Concurrency course} }
+    %         {\ru{Язык C\texttt{++}}\en{C\texttt{++}}. \ru{Реализация библиотеки для работы с многопоточностью}\en{Implementation of simple concurrency library}: fibers, futures, thread pool.}
+    
+        % \vspace{.1cm}
+
+    \vspace{.5em}
+
+	\section{\ru{Образование}\en{Education}}
+        \entry {\interval{2020}{\ru{2024}\en{2024}}}
+        {\ru{Московский государственный университет имени М.В.Ломоносова}\en{Lomonosov Moscow State University} \\
+        \ru{Факультет вычислительной математики и кибернетики}\en{Faculty of Computational Mathematics and Cybernetics}\\
+        \ru{Кафедра автоматизации систем вычислительных комплексов}\en{Department of Computer Systems and Automation}
+        }
+        {\ru{Очная форма обучения, бакалавриат.}\en{Bachelor's degree.}}
+
+    \vspace{.5em}
+     
+    \section{\ru{Проекты}\en{Projects}}
+        \entry {2023-2024}
+        {\ru{Реализация алгоритмов разбиения графов}\en{Implementation of graph partitioning algorithms}}
+        {\ru{Реализация алгоритмов в рамках научной работы по теме распределения работ по процессорам}\en{Implementation of algorithms as part of scientific work on the distribution of workload across processors}.} 
+    
+        \vspace{.5em}
+    
+        \entry {2018}
+        {\ru{Клиент-серверное приложение}\en{Client-Server Application}}
+        {\ru{Сервер реализован на языке Python3 (Flask, SQLAlchemy);\\
+        Клиент - на языке Java}\en{The server is implemented in Python3 (Flask, SQLAlchemy)\\The client is implemented in Java}.} 
+    
+        % \vspace{.5em}
+
+        % \entry {TODO}
+        % {\ru{Преобразователь гитарных табов в пдф ???}\en{TODO}}
+        % {\ru{TODO} 
+        % \en{TODO}} 
+    
+        \vspace{.5em}
+
+        \entry {2019}
+        {\ru{Симулятор движения небесных тел}\en{Celestial bodies motion simulator}}
+        {\ru{Решение задачи $n$ тел с помощью метода Рунге-Кутта 1-го порядка на Python3 с использованием NumPy}\en{Solving n-body problem with 1st order Runge-Kutta method in Python3 using NumPy}}.
+    
+        \vspace{.5em}
+
+    \section{\ru{Достижения}\en{Achievements}}
+        \begin{itemize}
+            \item \ru{Призёр регионального этапа ВСОШ по информатике}\en{Prize-winner of regional stage of the all-russian olympiad of school students in informatics.}
+            \item \ru{Победитель первой степени олимпиады ИТМО по информатике}\en{Winner of the open Olympiad of schoolchildren in informatic (ITMO).}
+            \item \ru{Хакатон TulaHack - 4 место}\en{Hackathon TulaHack - 4th place}
+        \end{itemize}
+    
+    \section{\ru{Навыки}\en{Skills}}
+    	\begin{tabular}{ >{\bfseries}r | l }
+    		\ru{Языки программирования}\en{Programming languages} & Python3, Go, C/C\texttt{++},  NASM\\
+    		% \ru{Технологии}\en{Technologies} & MongoDB, PostgreSQL, RabbitMQ, Kafka  \\
+    		\ru{Фреймворки и библиотеки}\en{Frameworks and libraries} & Flask,  asyncio, NumPy\\
+    		\ru{Инструменты}\en{Tools} & Git, CMake, Docker\\
+    		\ru{Языки}\en{Languages} & Russian(Native), English(B2)\\
+            \ru{Прочее}\en{Other skills} & LaTeX\\
+    	\end{tabular} 
+        
+    \vspace{\fill}
+    \begin{center}
+        \large
+        \href {https://github.com/Marilius/CV}{\ru{Актуальная версия этого резюме}\en{Up to date version of this CV}}
+    \end{center}
+\end{document}
